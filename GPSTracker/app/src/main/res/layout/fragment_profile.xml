@@ -45,6 +45,155 @@
                     android:textSize="27sp"
                     android:textStyle="bold" />
 
+                <ImageView
+                    android:id="@+id/editButton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/edit_button"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp" />
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/profileTitle"
+                    android:layout_marginTop="20dp"
+                    android:text="Name :"
+                    android:textColor="#619d6f"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/nameValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/profileTitle"
+                    android:layout_toRightOf="@id/name"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="-"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/userName"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/nameValue"
+                    android:layout_marginTop="20dp"
+                    android:text="UserName :"
+                    android:textColor="#619d6f"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/userNameValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/nameValue"
+                    android:layout_toRightOf="@id/userName"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="-"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/email"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/userNameValue"
+                    android:layout_marginTop="20dp"
+                    android:text="Email :"
+                    android:textColor="#619d6f"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/emailValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/userNameValue"
+                    android:layout_toRightOf="@id/email"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="-"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/empId"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/emailValue"
+                    android:layout_marginTop="20dp"
+                    android:text="Employee ID :"
+                    android:textColor="#619d6f"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/empIdValue"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/emailValue"
+                    android:layout_toRightOf="@id/empId"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="-"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/mobileNo"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/empIdValue"
+                    android:layout_marginTop="20dp"
+                    android:text="Mobile No. :"
+                    android:textColor="#619d6f"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/mobileNoValue"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/empIdValue"
+                    android:layout_toRightOf="@id/mobileNo"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="-"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/profile"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/mobileNoValue"
+                    android:layout_marginTop="20dp"
+                    android:text="Profile :"
+                    android:textColor="#619d6f"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/profileValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/mobileNoValue"
+                    android:layout_toRightOf="@id/profile"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="-"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
             </RelativeLayout>
 
         </RelativeLayout>

@@ -23,27 +23,45 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="50dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:layout_marginBottom="30dp"
                 android:background="@drawable/background_container"
                 android:orientation="vertical"
-                android:paddingLeft="30dp"
+                android:paddingLeft="15dp"
                 android:paddingRight="15dp" >
 
-                <TextView
-                    android:id="@+id/gpsTrackerTitle"
+                <RelativeLayout
+                    android:id="@+id/googleMapsRelativeLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/google_maps_background"
+                    android:layout_marginTop="20dp"
+                    android:padding="1dp"
+                    android:layout_centerHorizontal="true">
+
+                    <com.google.android.gms.maps.MapView
+                        android:id="@+id/mapView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/startButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/googleMapsRelativeLayout"
                     android:layout_marginTop="10dp"
-                    android:text="GPS Tracker"
+                    android:layout_marginBottom="20dp"
+                    android:textColor="@color/white"
                     android:layout_centerHorizontal="true"
-                    android:textColor="@color/c1"
-                    android:textSize="27sp"
-                    android:textStyle="bold" />
+                    android:text="START" />
+
+
 
             </RelativeLayout>
 

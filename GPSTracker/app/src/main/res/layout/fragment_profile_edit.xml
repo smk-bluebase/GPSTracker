@@ -31,7 +31,7 @@
                 android:layout_marginBottom="30dp"
                 android:background="@drawable/background_container"
                 android:orientation="vertical"
-                android:paddingLeft="30dp"
+                android:paddingLeft="15dp"
                 android:paddingRight="15dp" >
 
                 <TextView
@@ -44,6 +44,114 @@
                     android:textColor="@color/c1"
                     android:textSize="27sp"
                     android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/nameTextLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/profileTitle">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:hint="Name"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/userNameTextLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/nameTextLayout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/userName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:hint="UserName"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/emailTextLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/userNameTextLayout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:hint="Email"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/empIdTextLayout"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/emailTextLayout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/empId"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:hint="Employee ID"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/mobileNoTextLayout"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/empIdTextLayout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/mobileNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:hint="Mobile No"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/profileTextLayout"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/mobileNoTextLayout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:hint="Profile"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/update"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/profileTextLayout"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/c4"
+                    android:textColor="@color/white"
+                    android:text="Update"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="20dp" />
 
             </RelativeLayout>
 

@@ -7,6 +7,8 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
@@ -37,9 +39,7 @@ public class LoginActivity extends AppCompatActivity {
     Dialog dialog;
     DataBaseHelper dataBaseHelper;
 
-    boolean isRememberPassword = true;
-
-    String username = "admin";
+    boolean isRememberPassword = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int height = displayMetrics.heightPixels;
-        height = (int) (height / 1.6);
+        height = (int) (height / 1.5);
 
         ImageView background = findViewById(R.id.background);
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
@@ -60,8 +60,6 @@ public class LoginActivity extends AppCompatActivity {
 
         userNameEditText1 = findViewById(R.id.userName);
         passwordEditText = findViewById(R.id.password);
-        userNameEditText1.setText(username);
-        passwordEditText.setText(username);
 
         CheckBox rememberPassword = findViewById(R.id.rememberPassword);
 
@@ -82,18 +80,59 @@ public class LoginActivity extends AppCompatActivity {
             }
         }
 
-        rememberPassword.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        userNameEditText1.addTextChangedListener(new TextWatcher() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                dataBaseHelper.deleteUserMaster();
-                if(isChecked) {
-                    if(userNameEditText1.getText().toString().equals("") || passwordEditText.getText().toString().equals("")) {
-                        isRememberPassword = true;
-                    }else {
-                        isRememberPassword = false;
-                        dataBaseHelper.insertUserMaster(userNameEditText1.getText().toString(), passwordEditText.getText().toString());
-                    }
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // Do Nothing!
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // Do Nothing!
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if(rememberPassword.isChecked()) {
+                    isRememberPassword = true;
+                }else {
+                    isRememberPassword = false;
                 }
+            }
+        });
+
+        passwordEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // Do Nothing!
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // Do Nothing!
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if(rememberPassword.isChecked()) {
+                    isRememberPassword = true;
+                }else {
+                    isRememberPassword = false;
+                }
+            }
+        });
+
+        rememberPassword.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            dataBaseHelper.deleteUserMaster();
+            if(isChecked) {
+                if(userNameEditText1.getText().toString().equals("") || passwordEditText.getText().toString().equals("")) {
+                    isRememberPassword = true;
+                }else {
+                    isRememberPassword = false;
+                    dataBaseHelper.insertUserMaster(userNameEditText1.getText().toString(), passwordEditText.getText().toString());
+                }
+            }else {
+                isRememberPassword = false;
             }
         });
 
@@ -101,78 +140,69 @@ public class LoginActivity extends AppCompatActivity {
         TextView signUp = findViewById(R.id.signUp);
         TextView forgotPassword = findViewById(R.id.forgotPassword);
 
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(!userNameEditText1.getText().toString().equals("")){
-                    if(!passwordEditText.getText().toString().equals("")){
-                        if(isRememberPassword){
-                            dataBaseHelper.deleteUserMaster();
-                            dataBaseHelper.insertUserMaster(userNameEditText1.getText().toString(), passwordEditText.getText().toString());
-                        }
+        login.setOnClickListener(view -> {
+            if(!userNameEditText1.getText().toString().equals("")){
+                if(!passwordEditText.getText().toString().equals("")){
+                    if(isRememberPassword){
+                        dataBaseHelper.deleteUserMaster();
+                        dataBaseHelper.insertUserMaster(userNameEditText1.getText().toString(), passwordEditText.getText().toString());
+                    }
 
+                    progressDialog = new ProgressDialog(context);
+                    progressDialog.setCancelable(false);
+                    progressDialog.setMessage("Loading...");
+                    progressDialog.show();
+
+                    jsonObject = new JsonObject();
+                    jsonObject.addProperty("userName", userNameEditText1.getText().toString());
+
+                    MD5 md5 = new MD5();
+                    jsonObject.addProperty("password", md5.getMD5(passwordEditText.getText().toString()));
+
+                    PostLogin postLogin = new PostLogin(context);
+                    postLogin.checkServerAvailability(2);
+                }else{
+                    Toast.makeText(context, "Enter Password", Toast.LENGTH_SHORT).show();
+                }
+            }else{
+                Toast.makeText(context, "Enter Username", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        signUp.setOnClickListener(view -> {
+            Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
+            startActivity(intent);
+        });
+
+        forgotPassword.setOnClickListener(view -> {
+            dialog = new Dialog(context);
+            dialog.setCancelable(true);
+            dialog.setContentView(R.layout.forgot_password);
+
+            final EditText userNameEditText2 = dialog.findViewById(R.id.userName);
+            Button submit = dialog.findViewById(R.id.submit);
+
+            submit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(userNameEditText2.getText().toString().length() > 0) {
                         progressDialog = new ProgressDialog(context);
                         progressDialog.setCancelable(false);
                         progressDialog.setMessage("Loading...");
                         progressDialog.show();
 
                         jsonObject = new JsonObject();
-                        jsonObject.addProperty("userName", userNameEditText1.getText().toString());
+                        jsonObject.addProperty("userName", userNameEditText2.getText().toString());
 
-                        MD5 md5 = new MD5();
-                        jsonObject.addProperty("password", md5.getMD5(passwordEditText.getText().toString()));
-
-                        PostLogin postLogin = new PostLogin(context);
-                        postLogin.checkServerAvailability(2);
+                        PostForgotPassword postForgotPassword = new PostForgotPassword(context);
+                        postForgotPassword.checkServerAvailability(2);
                     }else{
-                        Toast.makeText(context, "Enter Password", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Enter Username", Toast.LENGTH_SHORT).show();
                     }
-                }else{
-                    Toast.makeText(context, "Enter Username", Toast.LENGTH_SHORT).show();
                 }
-            }
-        });
+            });
 
-        signUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        forgotPassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog = new Dialog(context);
-                dialog.setCancelable(true);
-                dialog.setContentView(R.layout.forgot_password);
-
-                final EditText userNameEditText2 = dialog.findViewById(R.id.userName);
-                Button submit = dialog.findViewById(R.id.submit);
-
-                submit.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        if(userNameEditText2.getText().toString().length() > 0) {
-                            progressDialog = new ProgressDialog(context);
-                            progressDialog.setCancelable(false);
-                            progressDialog.setMessage("Loading...");
-                            progressDialog.show();
-
-                            jsonObject = new JsonObject();
-                            jsonObject.addProperty("userName", userNameEditText2.getText().toString());
-
-                            PostForgotPassword postForgotPassword = new PostForgotPassword(context);
-                            postForgotPassword.checkServerAvailability(2);
-                        }else{
-                            Toast.makeText(context, "Enter Username", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-
-                dialog.show();
-            }
+            dialog.show();
         });
 
     }
@@ -199,6 +229,8 @@ public class LoginActivity extends AppCompatActivity {
 
                 if(jsonObject.getBoolean("status")){
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    CommonUtils.userName = userNameEditText1.getText().toString();
+                    CommonUtils.email = jsonObject.getString("email");
                     startActivity(intent);
                 }else {
                     Toast.makeText(getApplicationContext(),"Username or Password Incorrect",Toast.LENGTH_SHORT).show();
