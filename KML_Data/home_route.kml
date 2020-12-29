@@ -1,9 +1,26 @@
-?xml version="1.0" encoding="UTF-8"?> 
-<kml xmlns="http://earth.google.com/kml/2.0">
- <Document>
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.1">
+<!-- Data derived from:
+       Ed Knittel - || tastypopsicle.com
+       Feel free to use this file for your own purposes.
+       Just leave the comments and credits when doing so.
+-->
+  <Document>
+    <name>Chicago Transit Map</name>
+    <description>Chicago Transit Authority train lines</description>
 
-    <Placemark> 
+    <Style id="blueLine">
+      <LineStyle>
+        <color>ff000000</color>
+        <width>4</width>
+      </LineStyle>
+    </Style>
+
+    <Placemark>
+      <name>Blue Line</name>
+      <styleUrl>#blueLine</styleUrl>
       <LineString>
+        <altitudeMode>relative</altitudeMode>
         <coordinates>
             80.1868667,12.9556067,0 
             80.1868667,12.9556067,0 
