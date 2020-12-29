@@ -6,7 +6,7 @@
 
     <Style id="blackLine">
       <LineStyle>
-        <color>ffffffff</color>
+        <color>00000000</color>
         <width>4</width>
       </LineStyle>
     </Style>
