@@ -58,7 +58,7 @@
          <Placemark>
             <name>FORCE STOPPED HERE</name>
             <description>2nd Floor, Cybex Business Centre 118B, Anna Salai, Guindy, Guindy Institutional Area, SIDCO Industrial Estate, Guindy, Chennai, Tamil Nadu 600032, India</description>
-            <styleUrl>#startPoint</styleUrl>
+            <styleUrl>#forceStoppedPoint</styleUrl>
              <Point>
                 <coordinates>80.21428,13.01013,0</coordinates>
               </Point>
