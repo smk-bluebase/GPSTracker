@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<kml xmlns='http://earth.google.com/kml/2.1'>
+
+    <Document>
+        <name>GPSTracker App - Route Data</name>
+        <description>
+#Date - 2021-01-02
+#Time - 13:09:37
+#User - admin
+#Start Time - 2021-01-02 01:09:26
+#End Time - 2021-01-02 01:09:37
+#Start LatLng - 13.0096444, 80.2129669
+#End LatLng - 13.0107297, 80.2147966
+#Start Location - 126, Anna Salai, Guindy Institutional Area, SIDCO Industrial Estate, Guindy, Chennai, Tamil Nadu 600032, India
+#End Location - Quadsel Tower Old No 80, New No 118 Anna Salai, Manickam Ln, Guindy Institutional Area, SIDCO Industrial Estate, Guindy, Chennai, Tamil Nadu 600032, India
+		</description>
+
+        <Style id='blackLine'>
+            <LineStyle>
+                <color>ff000000</color>
+                <width>4</width>
+            </LineStyle>
+        </Style>
+
+        <Style id='startPoint'>
+            <IconStyle>
+               <Icon>
+                 <href>http://www.google.com/intl/en_us/mapfiles/ms/icons/green-dot.png</href>
+                </Icon>
+           </IconStyle>
+        </Style>
+
+
+        <Style id='destinationPoint'>
+            <IconStyle>
+                <Icon>
+                    <href>http://www.google.com/intl/en_us/mapfiles/ms/icons/red-dot.png</href>
+                </Icon>
+             </IconStyle>
+         </Style>
+
+         <Placemark>
+            <name>START</name>
+            <description>126, Anna Salai, Guindy Institutional Area, SIDCO Industrial Estate, Guindy, Chennai, Tamil Nadu 600032, India</description>
+            <styleUrl>#startPoint</styleUrl>
+             <Point>
+                <coordinates>80.2129669,13.0096444,0</coordinates>
+              </Point>
+         </Placemark>
+
+         <Placemark>
+            <name>DESTINATION</name>
+            <description>Quadsel Tower Old No 80, New No 118 Anna Salai, Manickam Ln, Guindy Institutional Area, SIDCO Industrial Estate, Guindy, Chennai, Tamil Nadu 600032, India</description>
+            <styleUrl>#destinationPoint</styleUrl>
+             <Point>
+                <coordinates>80.2147966,13.0107297,0</coordinates>
+              </Point>
+         </Placemark>
+
+        <Placemark>
+            <styleUrl>#blackLine</styleUrl>
+            <LineString>
+            <altitudeMode>relative</altitudeMode>
+                <coordinates>
+80.2129546,13.0096376,0
+80.2129396,13.0096291,0
+80.2132517,13.0097117,0
+80.21411,13.01007,0
+80.21483,13.01039,0
+80.2147966,13.0107297,0
+                </coordinates>
+            </LineString>
+        </Placemark>
+
+    </Document>
+</kml>
