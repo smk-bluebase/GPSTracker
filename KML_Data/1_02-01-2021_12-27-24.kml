@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<kml xmlns='http://earth.google.com/kml/2.1'>
+
+    <Document>
+        <name>GPSTracker App - Route Data</name>
+        <description>
+#Date - 2021-01-02
+#Time - 12:27:24
+#User - admin
+#Start Time - 2021-01-02 12:26:59
+#End Time - 2021-01-02 12:27:22
+#Start LatLng - 12.9556083, 80.1868668
+#End LatLng - 13.0107297, 80.2147966
+#Start Location - 1, Big St, Ranga Nagar, Keelkattalai, Chennai, Tamil Nadu 600117, India
+#End Location - Quadsel Tower Old No 80, New No 118 Anna Salai, Manickam Ln, Guindy Institutional Area, SIDCO Industrial Estate, Guindy, Chennai, Tamil Nadu 600032, India
+		</description>
+
+        <Style id='blackLine'>
+            <LineStyle>
+                <color>ff000000</color>
+                <width>4</width>
+            </LineStyle>
+        </Style>
+
+        <Style id='startPoint'>
+            <IconStyle>
+               <Icon>
+                 <href>http://www.google.com/intl/en_us/mapfiles/ms/icons/green-dot.png</href>
+                </Icon>
+           </IconStyle>
+        </Style>
+
+        <Style id='forceStoppedPoint'>
+            <IconStyle>
+               <Icon>
+                 <href>https://www.google.com/intl/en_us/mapfiles/ms/icons/yellow-dot.png</href>
+                </Icon>
+           </IconStyle>
+        </Style>
+
+        <Style id='destinationPoint'>
+            <IconStyle>
+                <Icon>
+                    <href>http://www.google.com/intl/en_us/mapfiles/ms/icons/red-dot.png</href>
+                </Icon>
+             </IconStyle>
+         </Style>
+
+         <Placemark>
+            <name>START</name>
+            <description>1, Big St, Ranga Nagar, Keelkattalai, Chennai, Tamil Nadu 600117, India</description>
+            <styleUrl>#startPoint</styleUrl>
+             <Point>
+                <coordinates>80.1868668,12.9556083,0</coordinates>
+              </Point>
+         </Placemark>
+
+         <Placemark>
+            <name>FORCE STOPPED HERE</name>
+            <description>54, Medavakkam Main Rd, Ranga Nagar, Madipakkam, Chennai, Tamil Nadu 600117, India</description>
+            <styleUrl>#startPoint</styleUrl>
+             <Point>
+                <coordinates>80.1871,12.96032,0</coordinates>
+              </Point>
+         </Placemark>
+         <Placemark>
+            <name>DESTINATION</name>
+            <description>Quadsel Tower Old No 80, New No 118 Anna Salai, Manickam Ln, Guindy Institutional Area, SIDCO Industrial Estate, Guindy, Chennai, Tamil Nadu 600032, India</description>
+            <styleUrl>#destinationPoint</styleUrl>
+             <Point>
+                <coordinates>80.2147966,13.0107297,0</coordinates>
+              </Point>
+         </Placemark>
+
+        <Placemark>
+            <styleUrl>#blackLine</styleUrl>
+            <LineString>
+            <altitudeMode>relative</altitudeMode>
+                <coordinates>
+80.1868668,12.9556079,0
+80.1868667,12.9556073,0
+80.1868667,12.955607,0
+80.1868667,12.9556069,0
+80.1868667,12.9556069,0
+80.1868217,12.9559367,0
+80.18687,12.95633,0
+80.18693,12.95692,0
+80.18695,12.95734,0
+80.18695,12.95769,0
+80.18695,12.95803,0
+80.18699,12.95851,0
+80.187,12.95916,0
+80.18704,12.95951,0
+80.1870667,12.9598083,0
+80.1871,12.96032,0
+                </coordinates>
+            </LineString>
+        </Placemark>
+
+    </Document>
+</kml>
