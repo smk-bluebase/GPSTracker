@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<kml xmlns='http://earth.google.com/kml/2.1'>
+
+    <Document>
+        <name>GPSTracker App - Route Data</name>
+        <description>
+#Date - 2021-01-02
+#Time - 12:43:42
+#User - admin
+#Start Time - 2021-01-02 12:43:23
+#End Time - 2021-01-02 12:43:42
+#Start LatLng - 13.00962, 80.2129233
+#End LatLng - 13.0107297, 80.2147966
+#Start Location - 126, Anna Salai, Guindy Institutional Area, SIDCO Industrial Estate, Guindy, Chennai, Tamil Nadu 600032, India
+#End Location - Quadsel Tower Old No 80, New No 118 Anna Salai, Manickam Ln, Guindy Institutional Area, SIDCO Industrial Estate, Guindy, Chennai, Tamil Nadu 600032, India
+		</description>
+
+        <Style id='blackLine'>
+            <LineStyle>
+                <color>ff000000</color>
+                <width>4</width>
+            </LineStyle>
+        </Style>
+
+        <Style id='startPoint'>
+            <IconStyle>
+               <Icon>
+                 <href>http://www.google.com/intl/en_us/mapfiles/ms/icons/green-dot.png</href>
+                </Icon>
+           </IconStyle>
+        </Style>
+
+        <Style id='forceStoppedPoint'>
+            <IconStyle>
+               <Icon>
+                 <href>https://www.google.com/intl/en_us/mapfiles/ms/icons/yellow-dot.png</href>
+                </Icon>
+           </IconStyle>
+        </Style>
+
+        <Style id='destinationPoint'>
+            <IconStyle>
+                <Icon>
+                    <href>http://www.google.com/intl/en_us/mapfiles/ms/icons/red-dot.png</href>
+                </Icon>
+             </IconStyle>
+         </Style>
+
+         <Placemark>
+            <name>START</name>
+            <description>126, Anna Salai, Guindy Institutional Area, SIDCO Industrial Estate, Guindy, Chennai, Tamil Nadu 600032, India</description>
+            <styleUrl>#startPoint</styleUrl>
+             <Point>
+                <coordinates>80.2129233,13.00962,0</coordinates>
+              </Point>
+         </Placemark>
+
+         <Placemark>
+            <name>FORCE STOPPED HERE</name>
+            <description>2nd Floor, Cybex Business Centre 118B, Anna Salai, Guindy, Guindy Institutional Area, SIDCO Industrial Estate, Guindy, Chennai, Tamil Nadu 600032, India</description>
+            <styleUrl>#startPoint</styleUrl>
+             <Point>
+                <coordinates>80.21428,13.01013,0</coordinates>
+              </Point>
+         </Placemark>
+         <Placemark>
+            <name>DESTINATION</name>
+            <description>Quadsel Tower Old No 80, New No 118 Anna Salai, Manickam Ln, Guindy Institutional Area, SIDCO Industrial Estate, Guindy, Chennai, Tamil Nadu 600032, India</description>
+            <styleUrl>#destinationPoint</styleUrl>
+             <Point>
+                <coordinates>80.2147966,13.0107297,0</coordinates>
+              </Point>
+         </Placemark>
+
+        <Placemark>
+            <styleUrl>#blackLine</styleUrl>
+            <LineString>
+            <altitudeMode>relative</altitudeMode>
+                <coordinates>
+80.2129233,13.00962,0
+80.2129233,13.00962,0
+80.2129233,13.00962,0
+80.2129233,13.00962,0
+80.2129233,13.00962,0
+80.2129233,13.00962,0
+80.2129233,13.00962,0
+80.2129233,13.00962,0
+80.2129233,13.00962,0
+80.21295,13.00959,0
+80.2137283,13.0099083,0
+80.21411,13.01007,0
+80.21428,13.01013,0
+                </coordinates>
+            </LineString>
+        </Placemark>
+
+    </Document>
+</kml>
